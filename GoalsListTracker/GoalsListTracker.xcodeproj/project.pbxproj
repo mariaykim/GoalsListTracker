@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A9AA08F2C26112400309B10 /* GoalsListTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA08E2C26112400309B10 /* GoalsListTrackerApp.swift */; };
-		3A9AA0912C26112400309B10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA0902C26112400309B10 /* ContentView.swift */; };
+		3A9AA0912C26112400309B10 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA0902C26112400309B10 /* RootView.swift */; };
 		3A9AA0932C26112500309B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA0922C26112500309B10 /* Assets.xcassets */; };
 		3A9AA0962C26112500309B10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA0952C26112500309B10 /* Preview Assets.xcassets */; };
 		3A9AA0E62C26156D00309B10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A9AA0E52C26156D00309B10 /* GoogleService-Info.plist */; };
@@ -42,17 +42,27 @@
 		3A9AA11F2C261D1400309B10 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 3A9AA11E2C261D1400309B10 /* FirebaseVertexAI-Preview */; };
 		3A9AA1212C261DCB00309B10 /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1202C261DCB00309B10 /* AuthDataResultModel.swift */; };
 		3A9AA1232C261DE700309B10 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1222C261DE700309B10 /* AuthenticationManager.swift */; };
+		3A9AA1262C261F4000309B10 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1252C261F4000309B10 /* SettingsView.swift */; };
+		3A9AA1282C261F6D00309B10 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1272C261F6D00309B10 /* SettingsViewViewModel.swift */; };
+		3A9AA12A2C261F8F00309B10 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1292C261F8F00309B10 /* SignInWithEmailView.swift */; };
+		3A9AA12C2C261FAD00309B10 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA12B2C261FAD00309B10 /* SignInView.swift */; };
+		3A9AA12E2C261FC400309B10 /* SignInEmailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA12D2C261FC400309B10 /* SignInEmailViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A9AA08B2C26112400309B10 /* GoalsListTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalsListTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9AA08E2C26112400309B10 /* GoalsListTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListTrackerApp.swift; sourceTree = "<group>"; };
-		3A9AA0902C26112400309B10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A9AA0902C26112400309B10 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		3A9AA0922C26112500309B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9AA0952C26112500309B10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A9AA0E52C26156D00309B10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A9AA1202C261DCB00309B10 /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		3A9AA1222C261DE700309B10 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		3A9AA1252C261F4000309B10 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3A9AA1272C261F6D00309B10 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
+		3A9AA1292C261F8F00309B10 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
+		3A9AA12B2C261FAD00309B10 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		3A9AA12D2C261FC400309B10 /* SignInEmailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +123,16 @@
 		3A9AA08D2C26112400309B10 /* GoalsListTracker */ = {
 			isa = PBXGroup;
 			children = (
+				3A9AA1242C261EEF00309B10 /* Authentication */,
 				3A9AA08E2C26112400309B10 /* GoalsListTrackerApp.swift */,
 				3A9AA1222C261DE700309B10 /* AuthenticationManager.swift */,
 				3A9AA1202C261DCB00309B10 /* AuthDataResultModel.swift */,
-				3A9AA0902C26112400309B10 /* ContentView.swift */,
+				3A9AA0902C26112400309B10 /* RootView.swift */,
+				3A9AA1252C261F4000309B10 /* SettingsView.swift */,
+				3A9AA1272C261F6D00309B10 /* SettingsViewViewModel.swift */,
+				3A9AA1292C261F8F00309B10 /* SignInWithEmailView.swift */,
+				3A9AA12B2C261FAD00309B10 /* SignInView.swift */,
+				3A9AA12D2C261FC400309B10 /* SignInEmailViewViewModel.swift */,
 				3A9AA0922C26112500309B10 /* Assets.xcassets */,
 				3A9AA0E52C26156D00309B10 /* GoogleService-Info.plist */,
 				3A9AA0942C26112500309B10 /* Preview Content */,
@@ -130,6 +146,13 @@
 				3A9AA0952C26112500309B10 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A9AA1242C261EEF00309B10 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +259,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9AA1262C261F4000309B10 /* SettingsView.swift in Sources */,
 				3A9AA1212C261DCB00309B10 /* AuthDataResultModel.swift in Sources */,
+				3A9AA12E2C261FC400309B10 /* SignInEmailViewViewModel.swift in Sources */,
+				3A9AA1282C261F6D00309B10 /* SettingsViewViewModel.swift in Sources */,
 				3A9AA1232C261DE700309B10 /* AuthenticationManager.swift in Sources */,
-				3A9AA0912C26112400309B10 /* ContentView.swift in Sources */,
+				3A9AA12A2C261F8F00309B10 /* SignInWithEmailView.swift in Sources */,
+				3A9AA0912C26112400309B10 /* RootView.swift in Sources */,
+				3A9AA12C2C261FAD00309B10 /* SignInView.swift in Sources */,
 				3A9AA08F2C26112400309B10 /* GoalsListTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
