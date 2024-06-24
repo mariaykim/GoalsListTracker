@@ -5,27 +5,14 @@
 //  Created by Maria Kim on 6/24/24.
 //
 
-import FirebaseAuth
 import Foundation
-import GoogleSignIn
-import GoogleSignInSwift
 
 @MainActor
 final class SignInViewViewModel: ObservableObject {
     
     func signInGoogle() async throws {
-        guard let topVC = Utilities.shared.topViewController() // grabbing top view controller
-        else {
-            throw URLError(.cannotFindHost)
-        }
-        
-        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
-        guard let idToken = gidSignInResult.user.idToken?.tokenString
-        else {
-            throw URLError(.badServerResponse)
-        }
-        let accessToken = gidSignInResult.user.accessToken.tokenString
-        let tokens = GoogleSignInResultModel(idToken: idToken, accessToken: accessToken)
+        let helper = GoogleSignInHelper()
+        let tokens = try await helper.signIn()
         
         try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
     }

@@ -52,6 +52,7 @@
 		3A9AA1382C29BC3600309B10 /* SignInViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1372C29BC3600309B10 /* SignInViewViewModel.swift */; };
 		3A9AA13A2C29BCF000309B10 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1392C29BCF000309B10 /* Utilities.swift */; };
 		3A9AA13C2C29C0C700309B10 /* GoogleSignInResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA13B2C29C0C700309B10 /* GoogleSignInResultModel.swift */; };
+		3A9AA1442C29C79700309B10 /* GoogleSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9AA1432C29C79700309B10 /* GoogleSignInHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		3A9AA1372C29BC3600309B10 /* SignInViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewViewModel.swift; sourceTree = "<group>"; };
 		3A9AA1392C29BCF000309B10 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3A9AA13B2C29C0C700309B10 /* GoogleSignInResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResultModel.swift; sourceTree = "<group>"; };
+		3A9AA1432C29C79700309B10 /* GoogleSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		3A9AA1422C29C60500309B10 /* GoogleSignInHelper */ = {
 			isa = PBXGroup;
 			children = (
+				3A9AA1432C29C79700309B10 /* GoogleSignInHelper.swift */,
 			);
 			path = GoogleSignInHelper;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				3A9AA1212C261DCB00309B10 /* AuthDataResultModel.swift in Sources */,
 				3A9AA13A2C29BCF000309B10 /* Utilities.swift in Sources */,
 				3A9AA12E2C261FC400309B10 /* SignInEmailViewViewModel.swift in Sources */,
+				3A9AA1442C29C79700309B10 /* GoogleSignInHelper.swift in Sources */,
 				3A9AA1382C29BC3600309B10 /* SignInViewViewModel.swift in Sources */,
 				3A9AA1282C261F6D00309B10 /* SettingsViewViewModel.swift in Sources */,
 				3A9AA1232C261DE700309B10 /* AuthenticationManager.swift in Sources */,
