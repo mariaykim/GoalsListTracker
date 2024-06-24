@@ -14,18 +14,14 @@ final class SignInEmailViewViewModel: ObservableObject {
     @Published var password = ""
     @Published var errorMessage = ""
     
-    func signIn() {
+    func signUp() async throws {
         guard validate() else { return }
-        
-        Task {
-            do {
-                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-            } catch {
-                print("THE ERROR: \(error)")
-            }
-        }
-        
-//        Auth.auth().signIn(withEmail: email, password: password)
+        let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+    }
+    
+    func signIn() async throws {
+        guard validate() else { return }
+        let returnedUserData = try await AuthenticationManager.shared.signInUser(email: email, password: password)
     }
                 
     func validate() -> Bool {

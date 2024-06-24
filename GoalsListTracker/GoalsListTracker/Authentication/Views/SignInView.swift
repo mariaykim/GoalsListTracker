@@ -12,10 +12,12 @@ import SwiftUI
 struct SignInView: View {
     
     @StateObject var viewModel = SignInViewViewModel()
+    @Binding var showSignInView: Bool
+    
     var body: some View {
         VStack {
             NavigationLink {
-                SignInEmailView()
+                SignInEmailView(showSignInView: $showSignInView)
             } label: {
                 Text("Sign In with email")
                     .font(.headline)
@@ -30,6 +32,7 @@ struct SignInView: View {
                 Task {
                     do {
                         try await viewModel.signInGoogle()
+                        showSignInView = false
                     } catch {
                         print(error)
                     }
@@ -43,6 +46,6 @@ struct SignInView: View {
 
 #Preview {
     NavigationStack {
-        SignInView()
+        SignInView(showSignInView: .constant(true))
     }
 }

@@ -25,7 +25,9 @@ struct SettingsView: View {
                 }
             }.foregroundStyle(Color.red)
             
-            emailSettingsSectionView
+            if viewModel.authProviders.contains(.email) {
+                emailSettingsSectionView
+            }
         }
     }
 }

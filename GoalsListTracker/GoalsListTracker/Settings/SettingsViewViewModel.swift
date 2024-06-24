@@ -10,6 +10,14 @@ import Foundation
 @MainActor
 final class SettingsViewViewModel: ObservableObject {
     
+    @Published var authProviders: [AuthProviderOption] = []
+    
+    func loadAuthProviders() {
+        if let providers = try? AuthenticationManager.shared.getProvider() {
+            authProviders = providers
+        }
+    }
+    
     func signOut() throws {
         try AuthenticationManager.shared.signOut()
     }
