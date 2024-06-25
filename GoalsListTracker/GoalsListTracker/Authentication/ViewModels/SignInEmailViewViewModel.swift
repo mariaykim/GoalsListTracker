@@ -18,7 +18,7 @@ final class SignInEmailViewViewModel: ObservableObject {
     func signUp() async throws {
         guard validate() else { return }
         let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        let dbUser = DBUser(userId: returnedUserData.uid, email: returnedUserData.email, photoUrl: returnedUserData.photoUrl, dateCreated: Date())
+        let dbUser = DBUser(auth: returnedUserData)
         try await UserManager.shared.createNewUser(user: dbUser)
     }
     
