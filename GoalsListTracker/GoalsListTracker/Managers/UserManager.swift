@@ -83,9 +83,7 @@ final class UserManager {
     }
     
     func getUser(userId: String) async throws -> DBUser {
-        let result = try await userDocument(userId: userId).getDocument().data(as: DBUser.self)
-        print("result \(result)")
-        return result
+        try await userDocument(userId: userId).getDocument(as: DBUser.self)
     }
     
     func updateUserPremiumStatus(user: DBUser) async throws {
@@ -93,7 +91,7 @@ final class UserManager {
     }
     
     func updateUserPremiumStatus(user: DBUser, isPremium: Bool) async throws {
-        var data: [String: Any] = [
+        let data: [String: Any] = [
             DBUser.CodingKeys.isPremium.rawValue : isPremium
         ]
         

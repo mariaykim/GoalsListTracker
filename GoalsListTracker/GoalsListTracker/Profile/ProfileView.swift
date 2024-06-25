@@ -18,7 +18,7 @@ struct ProfileView: View {
                 Text("userId: \(user.userId)")
                 
                 Button {
-                    //
+                    viewModel.toggleUserPremiumStatus()
                 } label: {
                     Text("Premium User: \((user.isPremium ?? false).description.capitalized)")
                 }
@@ -26,7 +26,6 @@ struct ProfileView: View {
         }
         .task {
             try? await viewModel.loadCurrentUser()
-            print("viewModel \(viewModel.user)")
         }
         .navigationTitle("Profile")
         .toolbar {
