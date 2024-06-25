@@ -16,10 +16,17 @@ struct ProfileView: View {
         List {
             if let user = viewModel.user {
                 Text("userId: \(user.userId)")
+                
+                Button {
+                    //
+                } label: {
+                    Text("Premium User: \((user.isPremium ?? false).description.capitalized)")
+                }
             }
         }
         .task {
             try? await viewModel.loadCurrentUser()
+            print("viewModel \(viewModel.user)")
         }
         .navigationTitle("Profile")
         .toolbar {
