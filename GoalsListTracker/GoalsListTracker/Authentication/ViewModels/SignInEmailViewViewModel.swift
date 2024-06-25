@@ -5,6 +5,7 @@
 //  Created by Maria Kim on 6/21/24.
 //
 
+import Foundation
 import SwiftUI
 import FirebaseAuth
 
@@ -17,7 +18,8 @@ final class SignInEmailViewViewModel: ObservableObject {
     func signUp() async throws {
         guard validate() else { return }
         let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        try await UserManager.shared.createNewUser(auth: returnedUserData)
+        let dbUser = DBUser(userId: returnedUserData.uid, email: returnedUserData.email, photoUrl: returnedUserData.photoUrl, dateCreated: Date())
+        try await UserManager.shared.createNewUser(user: dbUser)
     }
     
     func signIn() async throws {

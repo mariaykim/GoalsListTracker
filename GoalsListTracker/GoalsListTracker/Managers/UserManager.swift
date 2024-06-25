@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct DBUser {
+struct DBUser: Codable {
     let userId: String
     let email: String?
     let photoUrl: String?
@@ -22,39 +22,30 @@ final class UserManager {
     
     private let userCollection = Firestore.firestore().collection("users")
     
+    private let encoder: Firestore.Encoder = { // The firestore db uses snake case
+        let encoder = Firestore.Encoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        return encoder
+    }()
+    
+    private let decoder: Firestore.Decoder = { // The firestore db uses snake case
+        let encoder = Firestore.Decoder()
+        encoder.keyDecodingStrategy = .convertFromSnakeCase
+        return encoder
+    }()
+    
     private func userDocument(userId: String) -> DocumentReference {
         userCollection.document(userId)
     }
     
     private init() {}
     
-    func createNewUser(auth: AuthDataResultModel) async throws {
-        var userData: [String: Any] = [
-            "user_id": auth.uid,
-            "date_created": Timestamp(),
-            "email": auth.email ?? "",
-            "photoUrl": auth.photoUrl ?? ""
-        ]
-        
-        try await userDocument(userId: auth.uid).setData(userData, merge: false)
+    func createNewUser(user: DBUser) async throws {
+        try userDocument(userId: user.userId).setData(from: user, merge: false, encoder: encoder)
     }
     
     func getUser(userId: String) async throws -> DBUser {
-        let snapshot = try await userDocument(userId: userId).getDocument()
-        
-        guard let data = snapshot.data(),
-              let userId = data["user_id"] as? String
-        else {
-            throw URLError(.badServerResponse)
-        }
-        
-        let email = data["email"] as? String
-        let photoUrl = data["photo_url"] as? String
-        let dateCreated = data["date_created"] as? Date
-        
-        return DBUser(userId: userId, email: email, photoUrl: photoUrl, dateCreated: dateCreated)
-        
+        try await userDocument(userId: userId).getDocument().data(as: DBUser.self, decoder: decoder)
     }
     
 }
-
