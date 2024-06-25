@@ -22,6 +22,10 @@ final class SettingsViewViewModel: ObservableObject {
         try AuthenticationManager.shared.signOut()
     }
     
+    func deleteAccount() async throws {
+        try await AuthenticationManager.shared.deleteUser()
+    }
+    
     func resetPassword() async throws {
         let user = try AuthenticationManager.shared.getAuthenticatedUser()
         

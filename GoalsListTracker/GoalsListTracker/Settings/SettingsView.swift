@@ -25,6 +25,18 @@ struct SettingsView: View {
                 }
             }.foregroundStyle(Color.red)
             
+            Button("Delete account") {
+                Task {
+                    do {
+                        try await viewModel.deleteAccount()
+                        print("delete account")
+                        showSignInView = true
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
             if viewModel.authProviders.contains(.email) {
                 emailSettingsSectionView
             }
