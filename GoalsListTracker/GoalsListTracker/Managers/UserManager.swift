@@ -99,3 +99,11 @@ final class UserManager {
     }
     
 }
+
+extension UserManager {
+    
+    func createNewGoal(userId: String, goal: Goal) async throws {
+        try userDocument(userId: userId).collection("goals").document().setData(from: goal, merge: false)
+    }
+    
+}

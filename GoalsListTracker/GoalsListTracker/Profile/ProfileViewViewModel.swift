@@ -15,6 +15,7 @@ final class ProfileViewViewModel: ObservableObject {
     func loadCurrentUser() async throws {
         let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
         self.user = try await UserManager.shared.getUser(userId: authDataResult.uid)
+        try await UserManager.shared.createNewGoal(userId: authDataResult.uid, goal: .init(id: "123", title: "title", goalDate: Date()))
     }
     
     func toggleUserPremiumStatus() {

@@ -29,7 +29,7 @@ struct ProfileView: View {
         }
         .navigationTitle("Profile")
         .toolbar {
-            ToolbarItem(placement: .topBarLeading, content: {
+            ToolbarItem(placement: .topBarTrailing, content: {
                 NavigationLink(destination: {
                     SettingsView(showSignInView: $showSignInView)
                 }, label: {
